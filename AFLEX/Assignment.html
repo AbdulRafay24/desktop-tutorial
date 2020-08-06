@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+
+.navbar {
+  display: flex;
+}
+
+.navbar a {
+  color: white;
+  padding: 14px 3.3%;
+  text-decoration: none;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar b {
+  color: black;
+  padding: 14px 3.3%;
+  text-decoration: none;
+  padding-top: 150px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: baseline;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar b:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  background-color: rgb(255, 255, 255);
+}
+
+.flex-container > div {
+  background-color: white;
+  margin: 10px;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: grey;
+  border-bottom: grey;
+  border-style: dashed;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Search{
+    padding: 14px 3.3%;
+    position: relative;
+    display: flex;
+    height: 35px;
+    margin:5px;
+    float: left;
+}           
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 700px) {
+  .navbar, .flex-container {   
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="navbar" style="background-color: navy;">
+    <a href="#" style="font-family: Georgia, 'Times New Roman', Times, serif;">crunchbase</a>
+    <input type="text" class="Search" placeholder="Search Crunchbase">
+    <a href="#">Advaned</a>
+    <a href="#" style="color: black; background-color: orange;">TRY PRO FREE</a>
+    <a href="#">Solutions</a>
+    <a href="#">Products</a>
+    <a href="#">Resources</a>
+    <a href="#">Pricinng</a>
+    <a href="#">Log in</a>
+</div>
+
+<div class="navbar" style="background-color: rgb(224, 210, 210);">
+    <img src="clipminelogo.png" style="padding-left: 30px; padding-top: 10px; display: flex; align-items: baseline; ">
+    <b>Summary</b>
+    <b>Financials</b>
+    <b>People</b>
+    <b>Technology</b>
+    <b>Signals & News</b>
+    <button input style="width: 100px; height: 50pX; background-color: blue; color: white; border-radius: 10px; margin:50px; margin-left: 400px ; " type="button">
+        SAVE
+    </button>
+</div>
+
+<div class="flex-container" >
+     <div  style=" width: 32%; height: 350px;">
+         <i class="fa fa-building" style="font-size: 24px;">  About</i>
+         <p>ClipMine is the world's first smart video annotation platform that personalizes online video discovery and viewing experience for everyone.</p>
+         <p><i class="fa fa-location-arrow" >  San Francisco Bay Area, Silicon Valley, West Coast</i></p>
+         <p><i class="fa fa-users" >  1-10</i></p>
+         <p><i class="fa fa-flag" >  Private</i></p>
+         <p><i class="fa fa-globe" >  clip.mn</i></p>
+     </div>
+     <div style=" width: 32%; height: 350px;">
+        <i class="fa fa-building" style="font-size: 24px;">  Highlights</i>
+        <p style="color: gray; font-size: 20px;">Total Funding Amount</p>
+        <p style="color: blue; font-size: 20px;">$2.6M</p>
+        <p style="color: gray; font-size: 20px;">Number of Current Team Members</p>
+        <p style="color: blue; font-size: 20px;">4</p>
+        <p style="color: gray; font-size: 20px;">Number of Investors</p>
+        <p style="color: blue; font-size: 20px;">7</p>
+    </div>
+    <div style=" width: 32%; height: 350px; border-right-color:white;">
+        <i class="fa fa-share-alt" style="font-size: 24px;">  Recent News & Activity</i>
+        <p style="color: gray;">News - Nov 12,2018</p>
+        <p style="color: gray;">TechCrunch - <stong style="color: black;">What's next? The top media executives on the job market</strong></p>
+    </div>
+</div>
+
+<div class="flex-container">
+    <div style=" width: 60%; height: 410px;">
+        <i class="fa fa-file" style="font-size: 24px;">  Details</i>
+        <h4 style="color: grey;">Industries</h4>
+        <button style="border-style: none; background-color: white;"><input placeholder="Internet" style="width: 70px; height: 30px; text-align: center;  background-color: rgb(168, 243, 214); color: black; border-radius: 10px; "></button>
+        <button style="border-style: none; background-color: white;"><input placeholder="Search Engine" style="width: 110px; height: 30px; text-align: center;  background-color: rgb(168, 243, 214); color: black; border-radius: 10px; "></button>
+        <button style="border-style: none; background-color: white;"><input placeholder="Video" style="width: 60px; height: 30px; text-align: center;  background-color: rgb(168, 243, 214); color: black; border-radius: 10px; "></button>   
+        <h4 style="color: grey; line-height: 2px;">Founded Date</h4>
+        <p style="color: grey; line-height: 2px;">2014</p>
+        <h4 style="color: grey; line-height: 2px;">Operating Status</h4>
+        <p style="color: grey; line-height: 2px;">Active</p>
+        <p>ClipMine is a stealth mode startup working on radically improving how to end users discover and consume the ever growing online video content. We are building a small team of high energy indiviuals to take on some... </p>
+        <details>
+            <summary style="color: blue;">READ MORE</summary>
+            <p>of the hardest problems faced by 100s of millions of internet user across the globe everyday</p>
+        </details>
+        <p>
+        <a href="https://twitter.com/?lang=en" class="fa fa-twitter" style="background-color: #55ACEE; color: white; padding: 10px; font-size: 26px; border-radius: 50px;"></a>
+        <a href="https://www.google.com/" class="fa fa-google" style="background-color: #dd4b39; color: white; padding: 10px; font-size: 26px; border-radius: 50px;"></a>
+        <a href="https://pk.linkedin.com/" class="fa fa-linkedin" style="background-color: #007bb5; color: white; padding: 10px; font-size: 26px; border-radius: 50px;"></a>
+    </p>
+    </div>
+    
+    <div style="background-color: lightyellow; width: 25%; height: 270px; padding: 10px; border-style: none;">
+        <h2>Discover more with Pro</h2>
+        <p>Upgrade to Pro to access the expensive Crunchbase dataset to uncover the companies, people, and news that matters.</p>
+        <i class="fa fa-arrow-up" >  Target your search with the inituitive filters & unlimited results</i>
+        <i class="fa fa-arrow-up" >  Uncover hidden opportunities with growth signals</i>
+        <i class="fa fa-arrow-up" >  Monitor companies and industry trends with the customizatio alerts</i>
+        <button style="border-style: none; background-color: lightyellow;"><input placeholder="TRY PRO FREE" style="width: 120px; height: 30px; text-align: center; background-color: orange; color: rgb(0, 0, 0); border-radius: 10px; margin: 15%; "></button>   
+    </div>
+</div>
+<div class="flex-container">
+    <div style=" width: 60%; height: 410px;">
+        <i class="fa fa-list" style="font-size: 24px;">  Lists Featuring This Company</i>
+        <div style="overflow: auto; padding: 20px;">
+            <img style="float: left;" src="eagle.jpg"  width="70" height="70">
+            <h3 style="margin-left: 100px; color: darkblue; font-size: 20px;" >Western US Video Companies <input placeholder="Track" style="width: 70px; height: 30px; text-align: center;  background-color:white; color: darkblue; border-radius: 10px; margin-left: 80%;">
+            </h3>
+          </div>
+       
+        <div style="overflow: auto; padding: 20px;">
+            <img style="float: left;" src="gamer.jpg"  width="70" height="70">
+            <h3 style="margin-left: 100px; color: darkblue; font-size: 20px;" >San Francisco Bay Area Video Companies <input placeholder="Track" style="width: 70px; height: 30px; text-align: center;  background-color:white; color: darkblue; border-radius: 10px; margin-left: 80%;">
+            </h3>
+        </div>
+
+        <div style="overflow: auto; padding: 20px;">
+            <img style="float: left;" src="ninja.png"  width="70" height="70">
+            <h3 style="margin-left: 100px; color: darkblue; font-size: 20px;" >Silicon Valley Video Companies <input placeholder="Track" style="width: 70px; height: 30px; text-align: center;  background-color:white; color: darkblue; border-radius: 10px; margin-left: 80%;">
+            </h3>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
