@@ -11,7 +11,6 @@
   box-sizing: border-box;
 }
 
-
 .navbar {
   display: flex;
 }
@@ -27,8 +26,8 @@
 .navbar b {
   color: black;
   padding: 14px 3.3%;
+  text-align: center;
   text-decoration: none;
-  padding-top: 150px;
   font-family: Arial, Helvetica, sans-serif;
   align-items: baseline;
 }
@@ -52,12 +51,15 @@
 
 .flex-container > div {
   background-color: white;
-  margin: 10px;
+  margin-top: 50px;
   border-top-color: white;
   border-left-color: white;
-  border-right-color: grey;
+  border-right-color: white;
   border-bottom: grey;
-  border-style: dashed;
+  list-style: none;
+  flex: 0 0 32%;
+  padding-left: 20px;
+  border-style: solid;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -74,6 +76,71 @@
   opacity: 0.7;
 }
 
+.footer{
+  background-color:rgb(9, 9, 73);
+  color: white;
+  width: 100%;
+  height: 400px;
+  bottom: 0px;
+  position: relative;
+}
+
+.footer .main-content{
+  display: flex;
+}
+
+.footer .main-content .box{
+  flex-basis: 50%;
+  padding: 10px;
+}
+
+.box h2{
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.box p:hover{
+  color: red;
+}
+
+.box .content{
+  margin: 20px 0 0 0;
+}
+
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+
+.left .content .social a{
+  padding: 0 5px;
+}
+
+.left .content .social a span{
+  height: 40px;
+  width: 40px;
+  background: white;
+  line-height: 40px;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.left .content .social a span:hover{
+  background-color: black;
+  color: white;
+}
+
+.footer .footer-bottom{
+  height: 50px;
+  position: absolute;
+  text-align: center;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+
 @media screen and (max-width: 700px) {
   .navbar, .flex-container {   
     flex-direction: column;
@@ -85,7 +152,7 @@
 
 <body>
 
-<div class="navbar" style="background-color: navy;">
+<div class="navbar" style="background-color: rgb(9, 9, 73);">
     <a href="#" style="font-family: Georgia, 'Times New Roman', Times, serif;">crunchbase</a>
     <input type="text" class="Search" placeholder="Search Crunchbase">
     <a href="#">Advaned</a>
@@ -97,20 +164,18 @@
     <a href="#">Log in</a>
 </div>
 
-<div class="navbar" style="background-color: rgb(224, 210, 210);">
-    <img src="clipminelogo.png" style="padding-left: 30px; padding-top: 10px; display: flex; align-items: baseline; ">
+<div class="navbar" style="background-color: rgb(171, 191, 211);">
+    <img src="clipminelogo.png" style="align-items:baseline;  padding-top: 10px; padding-left:20px;  display: block;">
     <b>Summary</b>
     <b>Financials</b>
     <b>People</b>
     <b>Technology</b>
     <b>Signals & News</b>
-    <button input style="width: 100px; height: 50pX; background-color: blue; color: white; border-radius: 10px; margin:50px; margin-left: 400px ; " type="button">
-        SAVE
-    </button>
+    
 </div>
 
 <div class="flex-container" >
-     <div  style=" width: 32%; height: 350px;">
+     <div  style=" height: 350px;">
          <i class="fa fa-building" style="font-size: 24px;">  About</i>
          <p>ClipMine is the world's first smart video annotation platform that personalizes online video discovery and viewing experience for everyone.</p>
          <p><i class="fa fa-location-arrow" >  San Francisco Bay Area, Silicon Valley, West Coast</i></p>
@@ -118,7 +183,7 @@
          <p><i class="fa fa-flag" >  Private</i></p>
          <p><i class="fa fa-globe" >  clip.mn</i></p>
      </div>
-     <div style=" width: 32%; height: 350px;">
+     <div style=" height: 350px;">
         <i class="fa fa-building" style="font-size: 24px;">  Highlights</i>
         <p style="color: gray; font-size: 20px;">Total Funding Amount</p>
         <p style="color: blue; font-size: 20px;">$2.6M</p>
@@ -127,7 +192,7 @@
         <p style="color: gray; font-size: 20px;">Number of Investors</p>
         <p style="color: blue; font-size: 20px;">7</p>
     </div>
-    <div style=" width: 32%; height: 350px; border-right-color:white;">
+    <div style=" height: 350px;">
         <i class="fa fa-share-alt" style="font-size: 24px;">  Recent News & Activity</i>
         <p style="color: gray;">News - Nov 12,2018</p>
         <p style="color: gray;">TechCrunch - <stong style="color: black;">What's next? The top media executives on the job market</strong></p>
@@ -135,12 +200,12 @@
 </div>
 
 <div class="flex-container">
-    <div style=" width: 60%; height: 410px;">
+    <div style=" flex: 0 0 60%; height: 410px;">
         <i class="fa fa-file" style="font-size: 24px;">  Details</i>
         <h4 style="color: grey;">Industries</h4>
-        <button style="border-style: none; background-color: white;"><input placeholder="Internet" style="width: 70px; height: 30px; text-align: center;  background-color: rgb(168, 243, 214); color: black; border-radius: 10px; "></button>
-        <button style="border-style: none; background-color: white;"><input placeholder="Search Engine" style="width: 110px; height: 30px; text-align: center;  background-color: rgb(168, 243, 214); color: black; border-radius: 10px; "></button>
-        <button style="border-style: none; background-color: white;"><input placeholder="Video" style="width: 60px; height: 30px; text-align: center;  background-color: rgb(168, 243, 214); color: black; border-radius: 10px; "></button>   
+        <button style="border-style: none;  width: 70px; height: 30px; text-align: center;  background-color: rgb(168, 243, 214); color: black; border-radius: 10px; ">internet</button>
+        <button style="border-style: none;  width: 110px; height: 30px; text-align: center;  background-color: rgb(168, 243, 214); color: black; border-radius: 10px; ">Search Engine</button>
+        <button style="border-style: none;  width: 60px; height: 30px; text-align: center;  background-color: rgb(168, 243, 214); color: black; border-radius: 10px; ">Video</button>
         <h4 style="color: grey; line-height: 2px;">Founded Date</h4>
         <p style="color: grey; line-height: 2px;">2014</p>
         <h4 style="color: grey; line-height: 2px;">Operating Status</h4>
@@ -157,40 +222,94 @@
     </p>
     </div>
     
-    <div style="background-color: lightyellow; width: 25%; height: 270px; padding: 10px; border-style: none;">
+    <div style="background-color: lightyellow; height: 60%;  flex: 0 0 25%; padding: 10px; border-style: none;">
         <h2>Discover more with Pro</h2>
         <p>Upgrade to Pro to access the expensive Crunchbase dataset to uncover the companies, people, and news that matters.</p>
         <i class="fa fa-arrow-up" >  Target your search with the inituitive filters & unlimited results</i>
         <i class="fa fa-arrow-up" >  Uncover hidden opportunities with growth signals</i>
         <i class="fa fa-arrow-up" >  Monitor companies and industry trends with the customizatio alerts</i>
-        <button style="border-style: none; background-color: lightyellow;"><input placeholder="TRY PRO FREE" style="width: 120px; height: 30px; text-align: center; background-color: orange; color: rgb(0, 0, 0); border-radius: 10px; margin: 15%; "></button>   
+        <button style="width: 120px; height: 30px; text-align: center; background-color: orange; color: rgb(0, 0, 0); border-radius: 10px; float: right; margin-top: 10px; ">TRY PRO FREE</button>
     </div>
 </div>
+
 <div class="flex-container">
-    <div style=" width: 60%; height: 410px;">
+    <div style="flex: 0 0 60%; height: 410px; border-bottom-color: white;">
         <i class="fa fa-list" style="font-size: 24px;">  Lists Featuring This Company</i>
         <div style="overflow: auto; padding: 20px;">
             <img style="float: left;" src="eagle.jpg"  width="70" height="70">
-            <h3 style="margin-left: 100px; color: darkblue; font-size: 20px;" >Western US Video Companies <input placeholder="Track" style="width: 70px; height: 30px; text-align: center;  background-color:white; color: darkblue; border-radius: 10px; margin-left: 80%;">
+            <h3 style="margin-left: 100px; color: darkblue; font-size: 20px;" >Western US Video Companies <button style="width: 70px; height: 30px; text-align: center;  background-color:white; color: darkblue; border-radius: 10px; float: right;">Track</button>
             </h3>
-          </div>
+        </div>
        
         <div style="overflow: auto; padding: 20px;">
             <img style="float: left;" src="gamer.jpg"  width="70" height="70">
-            <h3 style="margin-left: 100px; color: darkblue; font-size: 20px;" >San Francisco Bay Area Video Companies <input placeholder="Track" style="width: 70px; height: 30px; text-align: center;  background-color:white; color: darkblue; border-radius: 10px; margin-left: 80%;">
+            <h3 style="margin-left: 100px; color: darkblue; font-size: 20px;" >San Francisco Bay Area Video Companies <button style="width: 70px; height: 30px; text-align: center;  background-color:white; color: darkblue; border-radius: 10px; float: right;">Track</button>
             </h3>
         </div>
 
         <div style="overflow: auto; padding: 20px;">
             <img style="float: left;" src="ninja.png"  width="70" height="70">
-            <h3 style="margin-left: 100px; color: darkblue; font-size: 20px;" >Silicon Valley Video Companies <input placeholder="Track" style="width: 70px; height: 30px; text-align: center;  background-color:white; color: darkblue; border-radius: 10px; margin-left: 80%;">
+            <h3 style="margin-left: 100px; color: darkblue; font-size: 20px;" >Silicon Valley Video Companies <button style="width: 70px; height: 30px; text-align: center;  background-color:white; color: darkblue; border-radius: 10px; float:right">Track</button>
             </h3>
         </div>
     </div>
 </div>
 
+<div class="footer">
+  <div class="main-content">
+    <div class="left box">
+      <h2>Stay Connected</h2>
+      <div class="content">
+        <p>Crunchbase News</p>
+        <p>Subscribe to the Crunchbase Daily</p>
+        <div class="social">
+          <a href="https://twitter.com/?lang=en"><span class="fa fa-twitter"></span></a>
+          <a href="https://www.google.com/"><span class="fa fa-google"></span></a>
+          <a href="https://pk.linkedin.com/"><span class="fa fa-linkedin"></span></a>
+        </div>
+      </div>
+    </div>
+      <div class="center box">
+        <h2>who are we</h2>
+        <div class="content">
+          <p>Company</p>
+          <p>Careers</p>
+          <p>Events</p>
+          <p>Partners</p>
+          <p>Blog</p>
+          <p>Press</p>
+          <p>Contact Us</p>
+        </div>
+      </div>    
+      <div class="center box">
+        <h2>what we do</h2>
+        <div class="content">
+          <p>Crunchbase Pro</p>
+          <p>Marketplace</p>
+          <p>Crunchbase Enterprise</p>
+          <p>Data Licensing</p>
+          <p>Customer Stories</p>
+          <p>Pricing</p>
+        </div>
+      </div>    
+      <div class="right box">
+        <h2>helpful links</h2>
+        <div class="content">
+          <p>Creating a Profile</p>
+          <p>Featured Lists and Searches</p>
+          <p>The Crunchbase Difference</p>
+          <p>Knowledge Center</p>
+          <p>Privacy</p>
+          <p>Do Not Sell My inso</p>
+        </div>
+      </div>    
+  </div>
 
-
+  <div class="footer-bottom">
+    <p>Terms of Service | Privacy Policy | Sitemap | &copy; 2020 Crunchbase Inc. All Rights Reserved.</p>
+  </div>
+  
+</div>
 
 </body>
 </html>
