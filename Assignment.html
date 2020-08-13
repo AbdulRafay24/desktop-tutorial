@@ -1,315 +1,259 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Assignment</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-.navbar {
-  display: flex;
-}
-
-.navbar a {
-  color: white;
-  padding: 14px 3.3%;
-  text-decoration: none;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.navbar b {
-  color: black;
-  padding: 14px 3.3%;
-  text-align: center;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-  align-items: baseline;
-}
-
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.navbar b:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-  background-color: rgb(255, 255, 255);
-}
-
-.flex-container > div {
-  background-color: white;
-  margin-top: 50px;
-  border-top-color: white;
-  border-left-color: white;
-  border-right-color: white;
-  border-bottom: grey;
-  list-style: none;
-  flex: 0 0 32%;
-  padding-left: 20px;
-  border-style: solid;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.Search{
-    padding: 14px 3.3%;
-    position: relative;
-    display: flex;
-    height: 35px;
-    margin:5px;
-    float: left;
-}           
-
-.fa:hover {
-  opacity: 0.7;
-}
-
-.footer{
-  background-color:rgb(9, 9, 73);
-  color: white;
-  width: 100%;
-  height: 400px;
-  bottom: 0px;
-  position: relative;
-}
-
-.footer .main-content{
-  display: flex;
-}
-
-.footer .main-content .box{
-  flex-basis: 50%;
-  padding: 10px;
-}
-
-.box h2{
-  font-size: 1.125rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.box p:hover{
-  color: red;
-}
-
-.box .content{
-  margin: 20px 0 0 0;
-}
-
-.left .content .social{
-  margin: 20px 0 0 0;
-}
-
-.left .content .social a{
-  padding: 0 5px;
-}
-
-.left .content .social a span{
-  height: 40px;
-  width: 40px;
-  background: white;
-  line-height: 40px;
-  font-size: 18px;
-  text-align: center;
-  border-radius: 5px;
-}
-
-.left .content .social a span:hover{
-  background-color: black;
-  color: white;
-}
-
-.footer .footer-bottom{
-  height: 50px;
-  position: absolute;
-  text-align: center;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-}
-
-
-@media screen and (max-width: 700px) {
-  .navbar, .flex-container {   
-    flex-direction: column;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="Backbone.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <script src="https://kit.fontawesome.com/9bf511635f.js" crossorigin="anonymous"></script>
 </head>
 
-
 <body>
+<!----------------------------------------------------------- NavBar1 Start ----------------------------------------------------------->
+    <nav >
+        <div class="logo">
+            <h4>crunchbase</h4>
+        </div>
+        <input type="text" class="Search" placeholder="Search Crunchbase">
+        <ul class="nav-links">
+            <li><a href='javascript:void(0)'>Advanced</a></li>
+            <li><b href='#'>TRY PRO FREE</b></li>
+            <li><a href='#'>Solutions</a></li>
+            <li><a href='#'>Products</a></li>
+            <li><a href='#'>Resources</a></li>
+            <li><a href='#'>Pricing</a></li>
+            <li><a href='#'>Log in</a></li>
+        </ul>
 
-<div class="navbar" style="background-color: rgb(9, 9, 73);">
-    <a href="#" style="font-family: Georgia, 'Times New Roman', Times, serif;">crunchbase</a>
-    <input type="text" class="Search" placeholder="Search Crunchbase">
-    <a href="#">Advaned</a>
-    <a href="#" style="color: black; background-color: orange;">TRY PRO FREE</a>
-    <a href="#">Solutions</a>
-    <a href="#">Products</a>
-    <a href="#">Resources</a>
-    <a href="#">Pricinng</a>
-    <a href="#">Log in</a>
-</div>
-
-<div class="navbar" style="background-color: rgb(171, 191, 211);">
-    <img src="clipminelogo.png" style="align-items:baseline;  padding-top: 10px; padding-left:20px;  display: block;">
-    <b>Summary</b>
-    <b>Financials</b>
-    <b>People</b>
-    <b>Technology</b>
-    <b>Signals & News</b>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <script src="toggle.js"></script>
     
-</div>
+<!----------------------------------------------------------- NavBar1 End ----------------------------------------------------------->
 
-<div class="flex-container" >
-     <div  style=" height: 350px;">
-         <i class="fa fa-building" style="font-size: 24px;">  About</i>
-         <p>ClipMine is the world's first smart video annotation platform that personalizes online video discovery and viewing experience for everyone.</p>
-         <p><i class="fa fa-location-arrow" >  San Francisco Bay Area, Silicon Valley, West Coast</i></p>
-         <p><i class="fa fa-users" >  1-10</i></p>
-         <p><i class="fa fa-flag" >  Private</i></p>
-         <p><i class="fa fa-globe" >  clip.mn</i></p>
-     </div>
-     <div style=" height: 350px;">
-        <i class="fa fa-building" style="font-size: 24px;">  Highlights</i>
-        <p style="color: gray; font-size: 20px;">Total Funding Amount</p>
-        <p style="color: blue; font-size: 20px;">$2.6M</p>
-        <p style="color: gray; font-size: 20px;">Number of Current Team Members</p>
-        <p style="color: blue; font-size: 20px;">4</p>
-        <p style="color: gray; font-size: 20px;">Number of Investors</p>
-        <p style="color: blue; font-size: 20px;">7</p>
+<!----------------------------------------------------------- NavBar2 Start ----------------------------------------------------------->
+    <div class="nav2">
+        <div class="nav2-title">
+            <img src="clipminelogoCB.png">
+            <p>ClipMine</p>
+        </div>
+      
+        <div class="nav2-menu">
+            <ul>
+                <li>Summary</li>
+                <li>Financials</li>
+                <li>People</li>
+                <li>Technology</li>
+                <li>Signals & News</li>
+            </ul>
+        </div>
     </div>
-    <div style=" height: 350px;">
-        <i class="fa fa-share-alt" style="font-size: 24px;">  Recent News & Activity</i>
-        <p style="color: gray;">News - Nov 12,2018</p>
-        <p style="color: gray;">TechCrunch - <stong style="color: black;">What's next? The top media executives on the job market</strong></p>
-    </div>
-</div>
+<!----------------------------------------------------------- NavBar2 End ----------------------------------------------------------->
 
-<div class="flex-container">
-    <div style=" flex: 0 0 60%; height: 410px;">
-        <i class="fa fa-file" style="font-size: 24px;">  Details</i>
-        <h4 style="color: grey;">Industries</h4>
-        <button style="border-style: none;  width: 70px; height: 30px; text-align: center;  background-color: rgb(168, 243, 214); color: black; border-radius: 10px; ">internet</button>
-        <button style="border-style: none;  width: 110px; height: 30px; text-align: center;  background-color: rgb(168, 243, 214); color: black; border-radius: 10px; ">Search Engine</button>
-        <button style="border-style: none;  width: 60px; height: 30px; text-align: center;  background-color: rgb(168, 243, 214); color: black; border-radius: 10px; ">Video</button>
-        <h4 style="color: grey; line-height: 2px;">Founded Date</h4>
-        <p style="color: grey; line-height: 2px;">2014</p>
-        <h4 style="color: grey; line-height: 2px;">Operating Status</h4>
-        <p style="color: grey; line-height: 2px;">Active</p>
-        <p>ClipMine is a stealth mode startup working on radically improving how to end users discover and consume the ever growing online video content. We are building a small team of high energy indiviuals to take on some... </p>
-        <details>
-            <summary style="color: blue;">READ MORE</summary>
-            <p>of the hardest problems faced by 100s of millions of internet user across the globe everyday</p>
-        </details>
-        <p>
-        <a href="https://twitter.com/?lang=en" class="fa fa-twitter" style="background-color: #55ACEE; color: white; padding: 10px; font-size: 26px; border-radius: 50px;"></a>
-        <a href="https://www.google.com/" class="fa fa-google" style="background-color: #dd4b39; color: white; padding: 10px; font-size: 26px; border-radius: 50px;"></a>
-        <a href="https://pk.linkedin.com/" class="fa fa-linkedin" style="background-color: #007bb5; color: white; padding: 10px; font-size: 26px; border-radius: 50px;"></a>
-    </p>
-    </div>
-    
-    <div style="background-color: lightyellow; height: 60%;  flex: 0 0 25%; padding: 10px; border-style: none;">
+<!----------------------------------------------------------- Sections Start ----------------------------------------------------------->
+
+    <div class="flex-container">
+
+        <!--About Section-->
+        <div class="div1">
+            <h2><i class="fas fa-building" > About</i></h2> 
+                <p>ClipMine is the world's first smart video annotation platform that personalizes online video discovery and viewing experience for everyone.</p>
+                <p><i class="fas fa-map-marker-alt" > San Francisco Bay Area, Silicon Valley, West Coast</i></p>
+                <p><i class="fas fa-dollar-sign"> Seeds</i></p>
+                <p><i class="fas fa-user-friends" > 1-10</i></p>
+                <p><i class="fas fa-flag" > Private</i></p>
+                <p><i class="fas fa-globe-americas" > clip.mn</i></p>
+                <p><i class="fas fa-chart-bar"> 39,576</i></p>
+        </div>
+
+          <!--Highlights Section-->
+        <div class="div2">
+            <h2><i class="far fa-newspaper"> Highlights</i></h2>
+            <p class="t">Total Funding Amount</p>
+            <p class="tt">$2.6M</p>
+            <p class="t">Number of Current Team Members</p>
+            <p class="tt">4</p>
+            <p class="t">Number of Investors</p>
+            <p class="tt">7</p>
+        </div>
+  
+          <!--Recent News & Activity Section-->
+        <div class="div3"> 
+            <h2><i class="fas fa-share-alt"> Recent News & Activity</i></h2>
+            <p><i class="fas fa-newspaper"></i>  News - Nov 12,2018</p>
+            <p class="bb">TechCrunch — What's next? The top media executives on the job market</p>
+            <p><i class="fab fa-acquisitions-incorporated"></i>  Acquisition - Aug 17,2017</p>
+            <p class="bb"><strong> Twitch </strong> acquired <strong> ClipMine</strong> for an undisclosed amount</p>
+            <p><i class="fas fa-newspaper"></i>  News - Jul 7,2015</p>
+            <p>PRWeb Sitemap — Launches The World's First Smart Video Annotation Platform</p>
+        </div>
+
+      </div>
+  
+  
+      <div class="row">
+        <div class="big-sec">
+
+          <!--Details Section-->
+          <div class="div4">
+              <div class="div4a">
+                <h2><i class="fa fa-file"> Details</i></h2>
+                <p>Industries</p>
+                <button href="#">internet</button>
+                <button href="#">Search Engine</button>
+                <button href="#">Video</button>
+                <p><strong>Founded Date</strong></p>
+                <p class="cc">2014</p>
+                <p><strong>Operating Status</strong></p>
+                <p class="cc">Active</p>
+                <p><strong>Company Type</strong></p>
+                <p class="cc">For Profit</p>
+            </div>
+            <div class="div4a">
+                <p class="qq"><strong> Contact Email</strong></p>
+                <p class="cc">dig@clipmineinc.com</p>
+                <p>ClipMine is a stealth mode startup working on radically improving how to end users discover and consume the ever growing online video content. We are building a small team of high energy indiviuals to take on some... </p>
+                <details>
+                    <summary class="ww">READ MORE</summary>
+                    <p>of the hardest problems faced by 100s of millions of internet user across the globe everyday</p>
+                </details>
+                <p>
+                <a href="https://twitter.com/?lang=en" class="fa fa-twitter" style="background-color: #55ACEE; color: white; padding: 10px; font-size: 26px; border-radius: 50px;"></a>
+                <a href="https://www.google.com/" class="fa fa-google" style="background-color: #dd4b39; color: white; padding: 10px; font-size: 26px; border-radius: 50px;"></a>
+                <a href="https://pk.linkedin.com/" class="fa fa-linkedin" style="background-color: #007bb5; color: white; padding: 10px; font-size: 26px; border-radius: 50px;"></a>
+            </p>
+            </div>
+          </div>
+  
+          <!--Lists Featuring Section-->
+          <div class="div5">
+                <h2><i class="fa fa-list">  Lists Featuring This Company</i></h2>
+                <div class="div5a">
+                    <img src="a.png" >
+                    <h3 class="ee">Western US Internet Acquired Companies </h3>
+                    <p><strong>1,104</strong> Number of Organizations <strong>• $31.3B</strong> Total Funding Amount <strong>• 3,390</strong> Number of Investors</p>
+                    <button class="buttona">Track</button>
+                </div>
+               
+                <div class="div5a">
+                    <img src="b.jpg" >
+                    <h3 class="ee" >Western US Internet Companies</h3>
+                    <p><strong>8,517</strong> Number of Organizations <strong>• $75B</strong> Total Funding Amount <strong>• 11,288</strong> Number of Investors</p>
+                    <button class="buttona">Track</button>
+                </div>
+        
+                <div class="div5a">
+                    <img src="c.jpg">
+                    <h3 class="ee" >California Companies (Top 10K)</h3>
+                    <p><strong>9,987</strong> Number of Organizations <strong>• $597.8B</strong> Total Funding Amount <strong>• 61,932</strong> Number of Investors</p>
+                    <button class="buttona">Track</button>
+                </div>
+
+                <div class="div5a">
+                    <img src="d.png" >
+                    <h3 class="ee">Western US Internet Acquired Companies</h3>
+                    <p><strong>9,205</strong> Number of Organizations <strong>• $332.1B</strong> Total Funding Amount <strong>• 32,130</strong> Number of Investors</p>
+                    <button class="buttona">Track</button>
+                </div>
+          </div>
+  
+          <!--M&A Details Section-->
+          <div class="div6">
+            <h2><i class="fas fa-angle-double-right"> M&A Details</i></h2>
+            <p>on Aug 17, 2017.</p>
+            <p><strong>Transaction Name</strong></p>
+            <p class="rr"><img src="cc.png"> ClipMine acquired by Twitch</p>
+            <p><strong>Acquired by</strong></p>
+            <p class="rr"><img src="twitch.png"> Twitch</p>
+            <p><strong>Announced Date</strong></p>
+            <p class="rr">Aug 17,2017</p>
+          </div>
+  
+        </div>
+  
+        <!--Discover more with pro Section-->
+        <div class="side">
         <h2>Discover more with Pro</h2>
         <p>Upgrade to Pro to access the expensive Crunchbase dataset to uncover the companies, people, and news that matters.</p>
-        <i class="fa fa-arrow-up" >  Target your search with the inituitive filters & unlimited results</i>
-        <i class="fa fa-arrow-up" >  Uncover hidden opportunities with growth signals</i>
-        <i class="fa fa-arrow-up" >  Monitor companies and industry trends with the customizatio alerts</i>
+        <p><i class="fa fa-arrow-up" >  Target your search with the inituitive filters & unlimited results</i></p>
+        <p><i class="fa fa-arrow-up" >  Uncover hidden opportunities with growth signals</i></p>
+        <p><i class="fa fa-arrow-up" >  Monitor companies and industry trends with the customizatio alerts</i></p>
         <button style="width: 120px; height: 30px; text-align: center; background-color: orange; color: rgb(0, 0, 0); border-radius: 10px; float: right; margin-top: 10px; ">TRY PRO FREE</button>
-    </div>
-</div>
-
-<div class="flex-container">
-    <div style="flex: 0 0 60%; height: 410px; border-bottom-color: white;">
-        <i class="fa fa-list" style="font-size: 24px;">  Lists Featuring This Company</i>
-        <div style="overflow: auto; padding: 20px;">
-            <img style="float: left;" src="eagle.jpg"  width="70" height="70">
-            <h3 style="margin-left: 100px; color: darkblue; font-size: 20px;" >Western US Video Companies <button style="width: 70px; height: 30px; text-align: center;  background-color:white; color: darkblue; border-radius: 10px; float: right;">Track</button>
-            </h3>
-        </div>
-       
-        <div style="overflow: auto; padding: 20px;">
-            <img style="float: left;" src="gamer.jpg"  width="70" height="70">
-            <h3 style="margin-left: 100px; color: darkblue; font-size: 20px;" >San Francisco Bay Area Video Companies <button style="width: 70px; height: 30px; text-align: center;  background-color:white; color: darkblue; border-radius: 10px; float: right;">Track</button>
-            </h3>
-        </div>
-
-        <div style="overflow: auto; padding: 20px;">
-            <img style="float: left;" src="ninja.png"  width="70" height="70">
-            <h3 style="margin-left: 100px; color: darkblue; font-size: 20px;" >Silicon Valley Video Companies <button style="width: 70px; height: 30px; text-align: center;  background-color:white; color: darkblue; border-radius: 10px; float:right">Track</button>
-            </h3>
-        </div>
-    </div>
-</div>
-
-<div class="footer">
-  <div class="main-content">
-    <div class="left box">
-      <h2>Stay Connected</h2>
-      <div class="content">
-        <p>Crunchbase News</p>
-        <p>Subscribe to the Crunchbase Daily</p>
-        <div class="social">
-          <a href="https://twitter.com/?lang=en"><span class="fa fa-twitter"></span></a>
-          <a href="https://www.google.com/"><span class="fa fa-google"></span></a>
-          <a href="https://pk.linkedin.com/"><span class="fa fa-linkedin"></span></a>
         </div>
       </div>
-    </div>
-      <div class="center box">
-        <h2>who are we</h2>
-        <div class="content">
-          <p>Company</p>
-          <p>Careers</p>
-          <p>Events</p>
-          <p>Partners</p>
-          <p>Blog</p>
-          <p>Press</p>
-          <p>Contact Us</p>
-        </div>
-      </div>    
-      <div class="center box">
-        <h2>what we do</h2>
-        <div class="content">
-          <p>Crunchbase Pro</p>
-          <p>Marketplace</p>
-          <p>Crunchbase Enterprise</p>
-          <p>Data Licensing</p>
-          <p>Customer Stories</p>
-          <p>Pricing</p>
-        </div>
-      </div>    
-      <div class="right box">
-        <h2>helpful links</h2>
-        <div class="content">
-          <p>Creating a Profile</p>
-          <p>Featured Lists and Searches</p>
-          <p>The Crunchbase Difference</p>
-          <p>Knowledge Center</p>
-          <p>Privacy</p>
-          <p>Do Not Sell My inso</p>
-        </div>
-      </div>    
-  </div>
+<!----------------------------------------------------------- Sections End ----------------------------------------------------------->
 
-  <div class="footer-bottom">
-    <p>Terms of Service | Privacy Policy | Sitemap | &copy; 2020 Crunchbase Inc. All Rights Reserved.</p>
-  </div>
+<!----------------------------------------------------------- Footer Start ----------------------------------------------------------->
+<div class="footer">
+    <div class="ff">
+        <p><img src="cc.png"> Crunchbase</p>
+    </div>
+    <div class="main-content">
+      <div class="left box">
+        <h2>Stay Connected</h2>
+        <div class="content">
+          <p>Crunchbase News</p>
+          <p>Subscribe to the Crunchbase Daily</p>
+          <div class="social">
+            <a href="https://twitter.com/?lang=en"><span class="fa fa-twitter"></span></a>
+            <a href="https://www.google.com/"><span class="fa fa-google"></span></a>
+            <a href="https://pk.linkedin.com/"><span class="fa fa-linkedin"></span></a>
+          </div>
+        </div>
+      </div>
+        <div class="center box">
+          <h2>who are we</h2>
+          <div class="content">
+            <p>Company</p>
+            <p>Careers</p>
+            <p>Events</p>
+            <p>Partners</p>
+            <p>Blog</p>
+            <p>Press</p>
+            <p>Contact Us</p>
+          </div>
+        </div>    
+        <div class="center box">
+          <h2>what we do</h2>
+          <div class="content">
+            <p>Crunchbase Pro</p>
+            <p>Marketplace</p>
+            <p>Crunchbase Enterprise</p>
+            <p>Data Licensing</p>
+            <p>Customer Stories</p>
+            <p>Pricing</p>
+          </div>
+        </div>    
+        <div class="right box">
+          <h2>helpful links</h2>
+          <div class="content">
+            <p>Creating a Profile</p>
+            <p>Featured Lists and Searches</p>
+            <p>The Crunchbase Difference</p>
+            <p>Knowledge Center</p>
+            <p>Privacy</p>
+            <p>Do Not Sell My inso</p>
+          </div>
+        </div>    
+    </div>
   
-</div>
+    <div class="footer-bottom1">
+        <p>Browse By: Organizations, People, Events</p>
+    </div>
+
+    <div class="footer-bottom2">
+      <p>Terms of Service | Privacy Policy | Sitemap | &copy; 2020 Crunchbase Inc. All Rights Reserved.</p>
+    </div>
+    
+  </div>
+<!----------------------------------------------------------- Footer End ----------------------------------------------------------->
 
 </body>
+
 </html>
