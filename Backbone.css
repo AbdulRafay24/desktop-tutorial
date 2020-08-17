@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 /*----------------------------------------------------------- NavBar1 Start ----------------------------------------------------------- */
@@ -11,7 +12,9 @@ nav{
     align-items: center;
     min-height: 5vh;
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(9, 9, 73);
+    background-color: rgb(37, 37, 85);
+    position: fixed;
+    width: 100%;
 }
 
 .logo{
@@ -88,9 +91,9 @@ nav{
     .nav-links{
         position: absolute;
         right: 0px;
-        height: 50%;
-        top: 5.85vh;
-        background-color: rgb(9, 9, 73);
+        line-height: 50px;
+        margin-top: 390px ;
+        background-color: rgb(37, 37, 85);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -141,7 +144,7 @@ nav{
 }
 
 .nav2-title{
-    padding-top: 20px;
+    padding-top: 70px;
     padding-right: 20px;
     padding-left: 300px;
     align-items: baseline;
@@ -169,11 +172,20 @@ nav{
     margin-left: 400px;
 }
 
+.ss{
+    margin-top: -160px;
+    padding-left: 200px;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
 .nav2-menu ul{
-    padding-top: 100px;
+    padding-top: 150px;
     display: flex;
     justify-content: flex-end;
+    margin-left: -170px;
 }
+
 
 .nav2-menu ul li{
     padding: 10px 20px;
@@ -191,32 +203,40 @@ nav{
 @media screen and (max-width:1200px){
    .nav2{
        height: auto;
-   }
+    }
    .nav2 .nav2-title{
        text-align: left;
        width: 100%;
+       padding-top: 60px;
+       padding-left: 300px;
+    }
 
-   }
+   .ss{
+    display: none;
+    }
 
    .nav2 img{
-       margin-left: -250px;
-       width: 50px;
-       border-style: none;
-   }
+    margin-left: -250px;
+    width: 40px;
+    border-style: none;
+    padding-bottom: 10px;
+    }
 
    .nav2 p{
     display: block;
-    margin-left: -175px;
+    margin-left: -190px;
     margin-top: -50px;
-    font-size: 30px;
-}
+    font-size: 22px;
+    }
+
 
    .nav2 .nav2-menu{
        width: 100%;
-       
+       margin-top: -50px;
    }
    .nav2 .nav2-menu ul{
-       justify-content: space-around;
+    justify-content: space-around;
+    padding-left: 160px;
        
    }
 
@@ -226,10 +246,11 @@ nav{
        border-left: none;
        border-right: none;
        width: 35%;
-       padding: 10px 0px;
-       text-align: center;
+       padding: 10px 10px;
+       padding-left: 60px;
        font-size: 16px;
        margin-top: -30px;
+       
    }
 }
 
