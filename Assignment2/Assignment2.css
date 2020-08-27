@@ -1,15 +1,98 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 5px;
-    text-align: left;
-  }
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table {
+}
+th,
+td {
+  text-align: center;
+}
+
+.tableStyle {
+}
+
+.Add {
+  width: 150px;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  color: green;
+}
+.Add:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.Edit {
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: rgb(3, 3, 180);
+}
+.Edit:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.Delete {
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: red;
+}
+.Delete:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.RR {
+}
+
+.cen {
+  text-align: center;
+  padding-top: 10px;
+  font-weight: bold;
+}
+.BB {
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+form {
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+}
+.TA {
+  margin: 2px;
+}
+
+form > input {
+  width: 30%;
+}
+form > textarea {
+  width: 30%;
+}
