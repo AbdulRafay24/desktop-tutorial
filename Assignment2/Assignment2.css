@@ -10,12 +10,17 @@ th,
 td {
   border: 1px solid black;
   border-collapse: collapse;
+  width: 20px;
 }
 table {
 }
 th,
 td {
   text-align: center;
+}
+
+td {
+  width: 20px;
 }
 
 .tableStyle {
@@ -57,6 +62,7 @@ td {
   border-radius: 20px;
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 5px;
   font-weight: bold;
   color: red;
 }
@@ -80,6 +86,10 @@ td {
   text-align: center;
   margin-top: 10px;
   font-weight: bold;
+}
+.BB:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 form {
   text-align: center;

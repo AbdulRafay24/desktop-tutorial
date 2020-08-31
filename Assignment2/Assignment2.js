@@ -1,19 +1,28 @@
 let movies = [];
-let a = fetch("https://ghibliapi.herokuapp.com/films")
-  .then((response) => response.json())
-  .then((data) => {
-    movies = data;
-  })
-  .then(() => generateMovieTable(movies))
+let check = JSON.parse(localStorage.getItem("myMovies"));
+//console.log(check);
+if (check === null) {
+  let a = fetch("https://ghibliapi.herokuapp.com/films")
+    .then((response) => response.json())
+    .then((data) => {
+      movies = data;
+    })
+    .then(() => generateMovieTable(movies))
 
-  .then(() => localStorage.setItem("myMovies", JSON.stringify(movies)));
+    .then(() => localStorage.setItem("myMovies", JSON.stringify(movies)));
+} else {
+  generateMovieTable(check);
+  console.log(check);
+}
+
 // let retrievedData = localStorage.getItem("myMovies");
 // let movies2 = JSON.parse(retrievedData);
 // console.log(myMovies);
 
 function generateMovieTable(movies) {
-  console.log(movies);
+  // console.log(movies);
   let noOfMovies = movies.length;
+
   if (noOfMovies > 0) {
     let table = document.createElement("table");
     table.setAttribute("id", "myTable");
@@ -85,7 +94,9 @@ function generateMovieTable(movies) {
 
       tBody.appendChild(bRow);
     }
+
     table.appendChild(tBody);
+    console.log(table);
 
     // for(i=0; i<noOfMovies; i++){
     //     console.log(i + ":" + movies[i][col[2]]);
@@ -93,11 +104,14 @@ function generateMovieTable(movies) {
 
     // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
     let divContainer = document.getElementById("movieDetails");
+
     divContainer.innerHTML = "";
+
     divContainer.appendChild(table);
+    console.log(movies);
   }
 }
-
+console.log(check);
 let RedirectA = () => {
   window.location = "Add.html";
 };
@@ -106,112 +120,113 @@ let RedirectE = () => {
   window.location = "Edit.html";
 };
 
-function delRow(btn) {
-  if (confirm("Clicking Ok will delete all details of the movie")) {
-    let row = btn.parentNode.parentNode;
-    row.parentNode.removeChild(row);
-  } else {
-    return 0;
-  }
+function delRow(obj) {
+  let index = obj.parentNode.parentNode.rowIndex;
+  console.log(index);
+  let retrievedData = localStorage.getItem("myMovies");
+  let delMovies = JSON.parse(retrievedData);
+
+  delMovies.splice(index - 1, 1);
+  localStorage.setItem("myMovies", JSON.stringify(delMovies));
+  console.log(delMovies);
+
+  let table = document.getElementById("myTable");
+  table.deleteRow(index);
 }
 
 let down = document.getElementById("movieDetails");
 
-// Create a break line element
-let br = document.createElement("br");
 function addMov() {
-  let bRow = document.createElement("tr");
+  let br = document.createElement("br");
+  // let bRow = document.createElement("tr");
   let form = document.createElement("form");
 
   form.setAttribute("method", "post");
-  //   form.setAttribute("action", "assignment2.html");
-  //   form.setAttribute("target", "assignment2.html");
+  form.setAttribute("action", "assignment2.html");
+  //form.setAttribute("target", "assignment2.html");
 
   //   let headingA = document.createElement("h1");
   //   headingA.setAttribute("text", "ADD NEW MOVIE");
 
   let ID = document.createElement("input");
-  //ID.setAttribute("id", "idd");
+  ID.setAttribute("id", "idd");
   ID.setAttribute("type", "text");
   ID.setAttribute("name", "ID");
   ID.setAttribute("placeholder", "ID");
 
   let title = document.createElement("input");
-  // title.setAttribute("id", "ttitle");
+  title.setAttribute("id", "ttitle");
   title.setAttribute("type", "text");
   title.setAttribute("name", "title");
   title.setAttribute("placeholder", "Title");
 
   let desc = document.createElement("textarea");
-  // desc.setAttribute("id", "ddesc");
+  desc.setAttribute("id", "ddesc");
   desc.setAttribute("type", "text");
   desc.setAttribute("name", "desc");
   desc.setAttribute("placeholder", "Description");
   desc.setAttribute("class", "TA");
 
   let dir = document.createElement("input");
-  // dir.setAttribute("id", "ddir");
+  dir.setAttribute("id", "ddir");
   dir.setAttribute("type", "text");
   dir.setAttribute("name", "dir");
   dir.setAttribute("placeholder", "Director");
 
   let prod = document.createElement("input");
-  // prod.setAttribute("id", "pprod");
+  prod.setAttribute("id", "pprod");
   prod.setAttribute("type", "text");
   prod.setAttribute("name", "prod");
   prod.setAttribute("placeholder", "Producer");
 
   let rsd = document.createElement("input");
-  // rsd.setAttribute("id", "rrsd");
+  rsd.setAttribute("id", "rrsd");
   rsd.setAttribute("type", "text");
   rsd.setAttribute("name", "rsd");
   rsd.setAttribute("placeholder", "Release Date");
 
   let rating = document.createElement("input");
-  //rating.setAttribute("id", "rate");
+  rating.setAttribute("id", "rate");
   rating.setAttribute("type", "text");
   rating.setAttribute("name", "rating");
   rating.setAttribute("placeholder", "Rating");
 
   let peop = document.createElement("input");
-  // peop.setAttribute("id", "peopl");
+  peop.setAttribute("id", "peopl");
   peop.setAttribute("type", "text");
   peop.setAttribute("name", "peop");
   peop.setAttribute("placeholder", "People");
 
   let spec = document.createElement("input");
-  // spec.setAttribute("id", "spe");
+  spec.setAttribute("id", "spe");
   spec.setAttribute("type", "text");
   spec.setAttribute("name", "spec");
   spec.setAttribute("placeholder", "Species");
 
   let loc = document.createElement("input");
-  //loc.setAttribute("id", "loca");
+  loc.setAttribute("id", "loca");
   loc.setAttribute("type", "text");
   loc.setAttribute("name", "loc");
   loc.setAttribute("placeholder", "Location");
 
   let veh = document.createElement("input");
-  //veh.setAttribute("id", "vehi");
+  veh.setAttribute("id", "vehi");
   veh.setAttribute("type", "text");
   veh.setAttribute("name", "veh");
   veh.setAttribute("placeholder", "Vehicles");
 
   let url = document.createElement("input");
-  // url.setAttribute("id", "urll");
+  url.setAttribute("id", "urll");
   url.setAttribute("type", "text");
   url.setAttribute("name", "url");
   url.setAttribute("placeholder", "URL");
 
   let s = document.createElement("input");
-  //s.setAttribute("id", "ss");
+  s.setAttribute("id", "ss");
   s.setAttribute("type", "submit");
-  s.setAttribute("value", "Add");
+  s.setAttribute("value", "Save");
   s.setAttribute("class", "BB");
   s.setAttribute("onClick", "movieAdd()");
-  // button.addEventListener("click", function(e) {
-  //     changeLng('en');
-  // }, false);
 
   //form.appendChild(headingA);
 
@@ -257,60 +272,74 @@ function addMov() {
 }
 
 function movieAdd(e) {
-  //   e.preventDefault();
-  //   console.log(e);
-  let myId = document.getElementById("idd");
-  let myTitle = document.getElementById("ttitle");
-  let myDesc = document.getElementById("ddesc");
-  let myDir = document.getElementById("ddir");
-  let myProd = document.getElementById("pprod");
-  let myRsd = document.getElementById("rrsd");
-  let myRate = document.getElementById("rate");
-  let myPeop = document.getElementById("peopl");
-  let mySpec = document.getElementById("spe");
-  let myLoc = document.getElementById("loca");
-  let myVeh = document.getElementById("vehi");
-  let myUrl = document.getElementById("urll");
+  // console.log(myMovies);
+  let myId = document.getElementById("idd").value;
+  let myTitle = document.getElementById("ttitle").value;
+  let myDesc = document.getElementById("ddesc").value;
+  let myDir = document.getElementById("ddir").value;
+  let myProd = document.getElementById("pprod").value;
+  let myRsd = document.getElementById("rrsd").value;
+  let myRate = document.getElementById("rate").value;
+  let myPeop = document.getElementById("peopl").value;
+  let mySpec = document.getElementById("spe").value;
+  let myLoc = document.getElementById("loca").value;
+  let myVeh = document.getElementById("vehi").value;
+  let myUrl = document.getElementById("urll").value;
 
   let newDetails = {
-    myId: myId,
-    myTitle: myTitle,
-    myDesc: myDesc,
-    myDir: myDir,
-    myProd: myProd,
-    myRsd: myRsd,
-    myRate: myRate,
-    myPeop: myPeop,
-    mySpec: mySpec,
-    myLoc: myLoc,
-    myVeh: myVeh,
-    myUrl: myUrl,
+    id: myId,
+    title: myTitle,
+    description: myDesc,
+    director: myDir,
+    producer: myProd,
+    release_date: myRsd,
+    rt_score: myRate,
+    people: myPeop,
+    species: mySpec,
+    locations: myLoc,
+    vehicles: myVeh,
+    url: myUrl,
   };
-
+  let retrievedData = localStorage.getItem("myMovies");
+  let movies2 = JSON.parse(retrievedData);
+  movies2.push(newDetails);
+  localStorage.setItem("myMovies", JSON.stringify(movies2));
+  console.log(movies2);
   console.log(newDetails);
-  //   let retrievedData = localStorage.getItem("myMovies");
-  //   let movies2 = JSON.parse(retrievedData);
-  //   let tt = document.getElementById("myTable");
-
-  //   let rrow = document.getElementById("myRow");
-
-  //   let rowCount = tt.rows.length;
-  //   let row = tt.insertRow(rowCount);
-
-  //   row.insertCell(0).innerHTML = myId.value;
-  //   row.insertCell(1).innerHTML = myTitle.value;
-  //   row.insertCell(2).innerHTML = myDesc.value;
-  //   row.insertCell(3).innerHTML = myDir.value;
-  //   row.insertCell(4).innerHTML = myProd.value;
-  //   row.insertCell(5).innerHTML = myRsd.value;
-  //   row.insertCell(6).innerHTML = myRate.value;
-  //   row.insertCell(7).innerHTML = myPeop.value;
-  //   row.insertCell(8).innerHTML = mySpec.value;
-  //   row.insertCell(9).innerHTML = myLoc.value;
-  //   row.insertCell(10).innerHTML = myVeh.value;
-  //   row.insertCell(11).innerHTML = myUrl.value;
 }
 
-// let retrievedData = localStorage.getItem("myMovies");
-// let movies2 = JSON.parse(retrievedData);
-// generateMovieTable(movies2);
+function editRow(event) {
+  event.preventDefault();
+  // let myId = document.getElementById("ID").value;
+  // let myTitle = document.getElementById("title").value;
+  // let myDesc = document.getElementById("desc").value;
+  // let myDir = document.getElementById("dir").value;
+  // let myProd = document.getElementById("prod").value;
+  // let myRsd = document.getElementById("rsd").value;
+  // let myRate = document.getElementById("rating").value;
+  // let myPeop = document.getElementById("peop").value;
+  // let mySpec = document.getElementById("spec").value;
+  // let myLoc = document.getElementById("loc").value;
+  // let myVeh = document.getElementById("veh").value;
+  // let myUrl = document.getElementById("url").value;
+  // let editDetails = {
+  //   id: myId,
+  //   title: myTitle,
+  //   description: myDesc,
+  //   director: myDir,
+  //   producer: myProd,
+  //   release_date: myRsd,
+  //   rt_score: myRate,
+  //   people: myPeop,
+  //   species: mySpec,
+  //   locations: myLoc,
+  //   vehicles: myVeh,
+  //   url: myUrl,
+  // };
+  // let retrievedData = localStorage.getItem("myMovies");
+  // let movies2 = JSON.parse(retrievedData);
+  // // editDetails = retrievedData.index;
+  // movies2.push(editDetails);
+  // localStorage.setItem("myMovies", JSON.stringify(movies2));
+  // console.log("editDetails");
+}

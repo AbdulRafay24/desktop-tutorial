@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
     <link rel="stylesheet" type="text/css" href="Assignment2.css" />
-    <script src="Assignment2.js"></script>
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Poppins"
     />
   </head>
   <body>
-    <form action="Assignment2.html" target="_blank" class="cen">
+    <form class="cen">
       <h2>EDIT MOVIE</h2>
       <label for="ID">ID: </label><br />
       <input type="text" id="ID" name="ID" /><br />
@@ -40,7 +40,9 @@
       <label for="url">Url: </label><br />
       <input type="text" id="url" name="url" /><br />
 
-      <input class="BB" type="submit" value="ADD" />
+      <button class="BB">Save</button>
+      <!-- <input class="BB" type="submit" value="Save" onclick="editRow()" /> -->
     </form>
+    <script src="Assignment2.js"></script>
   </body>
 </html>
