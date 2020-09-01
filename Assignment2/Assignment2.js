@@ -1,6 +1,5 @@
 let movies = [];
 let check = JSON.parse(localStorage.getItem("myMovies"));
-//console.log(check);
 if (check === null) {
   let a = fetch("https://ghibliapi.herokuapp.com/films")
     .then((response) => response.json())
@@ -12,15 +11,9 @@ if (check === null) {
     .then(() => localStorage.setItem("myMovies", JSON.stringify(movies)));
 } else {
   generateMovieTable(check);
-  console.log(check);
 }
 
-// let retrievedData = localStorage.getItem("myMovies");
-// let movies2 = JSON.parse(retrievedData);
-// console.log(myMovies);
-
 function generateMovieTable(movies) {
-  // console.log(movies);
   let noOfMovies = movies.length;
 
   if (noOfMovies > 0) {
@@ -54,7 +47,7 @@ function generateMovieTable(movies) {
 
     let buttonAdd = document.createElement("button");
     buttonAdd.setAttribute("class", "Add");
-    buttonAdd.innerHTML = "Add New Movie";
+    buttonAdd.innerHTML = "Add";
     buttonAdd.setAttribute("onClick", "RedirectA()");
     colAdd.appendChild(buttonAdd);
 
@@ -71,8 +64,9 @@ function generateMovieTable(movies) {
 
       for (let j = 0; j < col.length; j++) {
         let td = document.createElement("td");
+
         td.innerHTML = movies[i][col[j]];
-        td.setAttribute("class", "RR");
+        td.setAttribute("class", "show-read-more");
         bRow.appendChild(td);
       }
 
@@ -83,7 +77,7 @@ function generateMovieTable(movies) {
       let buttonEdit = document.createElement("button");
       buttonEdit.setAttribute("class", "Edit");
       buttonEdit.innerHTML = "Edit";
-      buttonEdit.setAttribute("onclick", "RedirectE()");
+      buttonEdit.setAttribute("onclick", "RedirectE(this)");
       rowED.appendChild(buttonEdit);
 
       let buttonDel = document.createElement("button");
@@ -97,10 +91,6 @@ function generateMovieTable(movies) {
 
     table.appendChild(tBody);
     console.log(table);
-
-    // for(i=0; i<noOfMovies; i++){
-    //     console.log(i + ":" + movies[i][col[2]]);
-    // }
 
     // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
     let divContainer = document.getElementById("movieDetails");
@@ -116,9 +106,14 @@ let RedirectA = () => {
   window.location = "Add.html";
 };
 
-let RedirectE = () => {
-  window.location = "Edit.html";
+let RedirectE = (obj) => {
+  let index = obj.parentNode.parentNode.rowIndex;
+  localStorage.setItem("index", index);
+  editRow1();
 };
+function editRow1() {
+  window.location = "Edit.html";
+}
 
 function delRow(obj) {
   let index = obj.parentNode.parentNode.rowIndex;
@@ -138,15 +133,10 @@ let down = document.getElementById("movieDetails");
 
 function addMov() {
   let br = document.createElement("br");
-  // let bRow = document.createElement("tr");
   let form = document.createElement("form");
 
   form.setAttribute("method", "post");
   form.setAttribute("action", "assignment2.html");
-  //form.setAttribute("target", "assignment2.html");
-
-  //   let headingA = document.createElement("h1");
-  //   headingA.setAttribute("text", "ADD NEW MOVIE");
 
   let ID = document.createElement("input");
   ID.setAttribute("id", "idd");
@@ -228,8 +218,6 @@ function addMov() {
   s.setAttribute("class", "BB");
   s.setAttribute("onClick", "movieAdd()");
 
-  //form.appendChild(headingA);
-
   form.appendChild(ID);
   form.appendChild(br.cloneNode());
 
@@ -308,38 +296,74 @@ function movieAdd(e) {
   console.log(newDetails);
 }
 
-function editRow(event) {
-  event.preventDefault();
-  // let myId = document.getElementById("ID").value;
-  // let myTitle = document.getElementById("title").value;
-  // let myDesc = document.getElementById("desc").value;
-  // let myDir = document.getElementById("dir").value;
-  // let myProd = document.getElementById("prod").value;
-  // let myRsd = document.getElementById("rsd").value;
-  // let myRate = document.getElementById("rating").value;
-  // let myPeop = document.getElementById("peop").value;
-  // let mySpec = document.getElementById("spec").value;
-  // let myLoc = document.getElementById("loc").value;
-  // let myVeh = document.getElementById("veh").value;
-  // let myUrl = document.getElementById("url").value;
-  // let editDetails = {
-  //   id: myId,
-  //   title: myTitle,
-  //   description: myDesc,
-  //   director: myDir,
-  //   producer: myProd,
-  //   release_date: myRsd,
-  //   rt_score: myRate,
-  //   people: myPeop,
-  //   species: mySpec,
-  //   locations: myLoc,
-  //   vehicles: myVeh,
-  //   url: myUrl,
-  // };
-  // let retrievedData = localStorage.getItem("myMovies");
-  // let movies2 = JSON.parse(retrievedData);
-  // // editDetails = retrievedData.index;
-  // movies2.push(editDetails);
-  // localStorage.setItem("myMovies", JSON.stringify(movies2));
-  // console.log("editDetails");
+function editRow() {
+  let i = localStorage.getItem("index");
+  console.log(i);
+  // let movieData = check;
+  let myId = document.getElementById("ID").value;
+  let myTitle = document.getElementById("title").value;
+  let myDesc = document.getElementById("desc").value;
+  let myDir = document.getElementById("dir").value;
+  let myProd = document.getElementById("prod").value;
+  let myRsd = document.getElementById("rsd").value;
+  let myRate = document.getElementById("rating").value;
+  let myPeop = document.getElementById("peop").value;
+  let mySpec = document.getElementById("spec").value;
+  let myLoc = document.getElementById("loc").value;
+  let myVeh = document.getElementById("veh").value;
+  let myUrl = document.getElementById("url").value;
+
+  let editDetails = {
+    id: myId,
+    title: myTitle,
+    description: myDesc,
+    director: myDir,
+    producer: myProd,
+    release_date: myRsd,
+    rt_score: myRate,
+    people: myPeop,
+    species: mySpec,
+    locations: myLoc,
+    vehicles: myVeh,
+    url: myUrl,
+  };
+
+  let retrievedData = localStorage.getItem("myMovies");
+  let editMovies = JSON.parse(retrievedData);
+  let a = editMovies.splice(i - 1, 1);
+  console.log(a);
+
+  let myVal = a.valueOf();
+
+  myVal = editDetails.valueOf();
+  console.log(myVal);
+
+  a = myVal;
+  console.log(a);
+
+  editMovies.push(a);
+  localStorage.setItem("myMovies", JSON.stringify(editMovies));
+  console.log(a);
+
+  console.log(editDetails);
 }
+
+$(document).ready(function () {
+  var maxLength = 40;
+  $(".show-read-more").each(function () {
+    var myStr = $(this).text();
+    if ($.trim(myStr).length > maxLength) {
+      var newStr = myStr.substring(0, maxLength);
+      var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+      $(this).empty().html(newStr);
+      $(this).append(
+        ' <a href="javascript:void(0);" class="read-more">read more...</a>'
+      );
+      $(this).append('<span class="more-text">' + removedStr + "</span>");
+    }
+  });
+  $(".read-more").click(function () {
+    $(this).siblings(".more-text").contents().unwrap();
+    $(this).remove();
+  });
+});

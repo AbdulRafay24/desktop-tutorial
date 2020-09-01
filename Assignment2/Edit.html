@@ -12,7 +12,7 @@
     />
   </head>
   <body>
-    <form class="cen">
+    <form action="Assignment2.html" class="cen">
       <h2>EDIT MOVIE</h2>
       <label for="ID">ID: </label><br />
       <input type="text" id="ID" name="ID" /><br />
@@ -40,9 +40,32 @@
       <label for="url">Url: </label><br />
       <input type="text" id="url" name="url" /><br />
 
-      <button class="BB">Save</button>
-      <!-- <input class="BB" type="submit" value="Save" onclick="editRow()" /> -->
+      <button class="BB" type="submit" onclick="editRow() ">Save</button>
     </form>
+    <script type="text/javascript">
+      let table = document.getElementById("myTable");
+      let i = localStorage.getItem("index");
+      console.log(i);
+      let retrievedData = localStorage.getItem("myMovies");
+      let editMovies = JSON.parse(retrievedData);
+      let a = editMovies.splice(i - 1, 1);
+
+      document.getElementById("ID").value = a[0].id;
+      document.getElementById("title").value = a[0].title;
+      document.getElementById("desc").value = a[0].description;
+      document.getElementById("dir").value = a[0].director;
+      document.getElementById("prod").value = a[0].producer;
+      document.getElementById("rsd").value = a[0].release_date;
+      document.getElementById("rating").value = a[0].rt_score;
+      document.getElementById("peop").value = a[0].people;
+      document.getElementById("spec").value = a[0].species;
+      document.getElementById("loc").value = a[0].locations;
+      document.getElementById("veh").value = a[0].vehicles;
+      document.getElementById("url").value = a[0].url;
+
+      //             const element: HTMLElement = document.getElementById('personDetails') as HTMLElement
+      // element.innerHTML = 'Hello World'
+    </script>
     <script src="Assignment2.js"></script>
   </body>
 </html>

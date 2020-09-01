@@ -1,5 +1,4 @@
 * {
-  margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -8,77 +7,72 @@
 table,
 th,
 td {
+  background-color: white;
   border: 1px solid black;
   border-collapse: collapse;
-  width: 20px;
-}
-table {
 }
 th,
 td {
   text-align: center;
-}
-
-td {
-  width: 20px;
+  border: 1px solid black;
+  overflow: hidden;
 }
 
 .tableStyle {
+  table-layout: fixed;
+  width: 100%;
 }
 
-.Add {
-  width: 150px;
+.Add,
+.Edit,
+.Delete {
+  width: 90px;
   height: 30px;
   border-radius: 20px;
   text-align: center;
-  margin: 5px;
-  margin-bottom: 5px;
   font-weight: bold;
   font-size: 16px;
-  color: green;
+  background-color: rgb(232, 240, 243);
 }
-.Add:hover {
-  cursor: pointer;
-  opacity: 0.7;
+.Add {
+  margin: 5px;
+  margin-bottom: 5px;
+
+  color: green;
 }
 
 .Edit {
-  width: 100px;
-  height: 30px;
-  border-radius: 20px;
-  text-align: center;
   margin-top: 10px;
-  font-weight: bold;
   color: rgb(3, 3, 180);
-}
-.Edit:hover {
-  cursor: pointer;
-  opacity: 0.7;
 }
 
 .Delete {
-  width: 100px;
-  height: 30px;
-  border-radius: 20px;
-  text-align: center;
   margin-top: 10px;
-  margin-bottom: 5px;
-  font-weight: bold;
+  margin-bottom: 10px;
   color: red;
 }
+
+.Add:hover,
+.Edit:hover,
 .Delete:hover {
   cursor: pointer;
   opacity: 0.7;
 }
 
 .RR {
+  /* height: 20px;
+  width: 20px; */
 }
 
+.show-read-more .more-text {
+  display: none;
+}
 .cen {
   text-align: center;
   padding-top: 10px;
   font-weight: bold;
 }
+
 .BB {
   width: 100px;
   height: 30px;
